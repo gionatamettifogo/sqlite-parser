@@ -1,0 +1,124 @@
+{
+  "type": "statement",
+  "variant": "list",
+  "statement": [
+    {
+      "type": "statement",
+      "name": {
+        "type": "identifier",
+        "variant": "table",
+        "name": "albums"
+      },
+      "variant": "create",
+      "format": "table",
+      "definition": [
+        {
+          "type": "definition",
+          "variant": "column",
+          "name": "AlbumId",
+          "definition": [
+            {
+              "type": "constraint",
+              "variant": "primary key",
+              "autoIncrement": true
+            },
+            {
+              "type": "constraint",
+              "variant": "not null"
+            }
+          ],
+          "datatype": {
+            "type": "datatype",
+            "variant": "integer",
+            "affinity": "integer"
+          }
+        },
+        {
+          "type": "definition",
+          "variant": "column",
+          "name": "Title",
+          "definition": [
+            {
+              "type": "constraint",
+              "variant": "not null"
+            }
+          ],
+          "datatype": {
+            "type": "datatype",
+            "variant": "nvarchar",
+            "affinity": "text",
+            "args": {
+              "type": "expression",
+              "variant": "list",
+              "expression": [
+                {
+                  "type": "literal",
+                  "variant": "decimal",
+                  "value": "160"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "definition",
+          "variant": "column",
+          "name": "ArtistId",
+          "definition": [
+            {
+              "type": "constraint",
+              "variant": "not null"
+            }
+          ],
+          "datatype": {
+            "type": "datatype",
+            "variant": "integer",
+            "affinity": "integer"
+          }
+        },
+        {
+          "type": "definition",
+          "variant": "constraint",
+          "definition": [
+            {
+              "type": "constraint",
+              "variant": "foreign key",
+              "references": {
+                "type": "identifier",
+                "variant": "expression",
+                "format": "table",
+                "name": "artists",
+                "columns": [
+                  {
+                    "type": "identifier",
+                    "variant": "column",
+                    "name": "ArtistId"
+                  }
+                ]
+              },
+              "action": [
+                {
+                  "type": "action",
+                  "variant": "on delete",
+                  "action": "no action"
+                },
+                {
+                  "type": "action",
+                  "variant": "on update",
+                  "action": "no action"
+                }
+              ]
+            }
+          ],
+          "columns": [
+            {
+              "type": "identifier",
+              "variant": "column",
+              "name": "ArtistId"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

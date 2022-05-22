@@ -1373,7 +1373,7 @@ function peg$parse(input, options) {
     function(m, a, n) {
         return {
           'type': 'action',
-          'variant': keyNode(m),
+          'variant': foldStringKey([ m, a ]),
           'action': keyNode(n)
         };
       },

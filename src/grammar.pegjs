@@ -2216,7 +2216,7 @@ foreign_action_on
   {
     return {
       'type': 'action',
-      'variant': keyNode(m),
+      'variant': foldStringKey([ m, a ]),
       'action': keyNode(n)
     };
   }

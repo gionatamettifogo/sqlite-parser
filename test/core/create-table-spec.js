@@ -18,6 +18,10 @@ describe('create table', function() {
     tree.equals(this, done);
   });
 
+  it('create foreign key 3', function(done) {
+    tree.equals(this, done);
+  });
+
   it('create check 1', function(done) {
     tree.equals(this, done);
   });
